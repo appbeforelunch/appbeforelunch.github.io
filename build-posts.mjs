@@ -8,7 +8,8 @@ const EPISODES = [
   { slug: 'ep03-foodcheck', n: 3, date: '2026-09-22', repo: 'https://github.com/appbeforelunch/lunch-foodcheck', app: 'https://appbeforelunch.github.io/lunch-foodcheck/', video: '', health: true },
 ];
 const SRC = '/Users/joseocasio/Documents/Personal-Projects/ai-channel/episodes/';
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const clean = (s) => String(s).replace(/\[[^\]]+\]\s*/g, '');
+const esc = (s) => clean(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 mkdirSync('posts', { recursive: true });
 
 const CSS = `
