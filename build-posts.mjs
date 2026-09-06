@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const EPISODES = [
-  { slug: 'ep01-invoice', n: 1, date: '2026-09-08', repo: 'https://github.com/appbeforelunch/lunch-invoice', app: 'https://appbeforelunch.github.io/lunch-invoice/', video: '' },
+  { slug: 'ep01-invoice', n: 1, date: '2026-09-05', repo: 'https://github.com/appbeforelunch/lunch-invoice', app: 'https://appbeforelunch.github.io/lunch-invoice/', video: 'coD7vvNehcY' },
   { slug: 'ep02-pipeline', n: 2, date: '2026-09-15', repo: 'https://github.com/appbeforelunch/lunch-video', app: '', video: '' },
   { slug: 'ep03-foodcheck', n: 3, date: '2026-09-22', repo: 'https://github.com/appbeforelunch/lunch-foodcheck', app: 'https://appbeforelunch.github.io/lunch-foodcheck/', video: '', health: true },
 ];
