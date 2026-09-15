@@ -4,8 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const EPISODES = [
   { slug: 'ep01-invoice', n: 1, date: '2026-09-05', repo: 'https://github.com/appbeforelunch/lunch-invoice', app: 'https://appbeforelunch.github.io/lunch-invoice/', video: 'coD7vvNehcY' },
-  { slug: 'ep02-pipeline', n: 2, date: '2026-09-15', repo: 'https://github.com/appbeforelunch/lunch-video', app: '', video: '' },
-  { slug: 'ep03-foodcheck', n: 3, date: '2026-09-22', repo: 'https://github.com/appbeforelunch/lunch-foodcheck', app: 'https://appbeforelunch.github.io/lunch-foodcheck/', video: '', health: true },
+  { slug: 'ep02-pipeline', n: 2, date: '2026-09-15', repo: 'https://github.com/appbeforelunch/lunch-video', app: '', video: 'N4y15sT-9og' },
 ];
 const SRC = '/Users/joseocasio/Documents/Personal-Projects/ai-channel/episodes/';
 const clean = (s) => String(s).replace(/\[[^\]]+\]\s*/g, '');
@@ -51,7 +50,7 @@ for (const ep of EPISODES) {
   const video = ep.video ? `<div class="video"><iframe src="https://www.youtube.com/embed/${ep.video}" title="${esc(d.title)}" allowfullscreen></iframe></div>` : `<div class="video">Video goes live ${ep.date}. <a href="https://www.youtube.com/@AppBeforeLunch" style="margin-left:8px">Subscribe to catch it</a></div>`;
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(d.title)} — App Before Lunch</title>
+<title>${esc(d.title)} | App Before Lunch</title>
 <meta name="description" content="${esc(lede).slice(0, 155)}">
 <meta property="og:title" content="${esc(d.title)}"><meta property="og:description" content="${esc(lede).slice(0, 200)}"><meta property="og:image" content="https://appbeforelunch.com/og.png">
 <link rel="icon" href="../logo.svg" type="image/svg+xml">
