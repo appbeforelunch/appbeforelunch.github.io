@@ -1,12 +1,16 @@
 // Generates one written post per episode from ai-channel/episodes/<slug>.json into posts/<slug>.html.
 // Usage: node build-posts.mjs   (run from the site repo; commit the output)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import path from 'node:path';
+
+// Sibling folders of this repo (ai-channel, lunch-*), so no absolute paths are committed.
+const PROJECTS = path.resolve(import.meta.dirname, '..');
 
 const EPISODES = [
   { slug: 'ep01-invoice', n: 1, date: '2026-09-05', repo: 'https://github.com/appbeforelunch/lunch-invoice', app: 'https://appbeforelunch.github.io/lunch-invoice/', video: 'coD7vvNehcY' },
   { slug: 'ep02-pipeline', n: 2, date: '2026-09-15', repo: 'https://github.com/appbeforelunch/lunch-video', app: '', video: 'N4y15sT-9og' },
 ];
-const SRC = '/Users/demo/Documents/Personal-Projects/ai-channel/episodes/';
+const SRC = path.join(PROJECTS, 'ai-channel', 'episodes') + '/';
 const clean = (s) => String(s).replace(/\[[^\]]+\]\s*/g, '');
 const esc = (s) => clean(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 mkdirSync('posts', { recursive: true });
@@ -35,7 +39,7 @@ const CSS = `
 for (const ep of EPISODES) {
   const d = JSON.parse(readFileSync(SRC + ep.slug + '.json', 'utf8'));
   let prompt = '';
-  try { prompt = readFileSync(`/Users/demo/Documents/Personal-Projects/${{ 'ep01-invoice': 'lunch-invoice', 'ep02-pipeline': 'lunch-video', 'ep03-foodcheck': 'lunch-foodcheck' }[ep.slug]}/PROMPT.md`, 'utf8').split('\n').slice(2).join('\n').trim(); } catch {}
+  try { prompt = readFileSync(`${PROJECTS}/${{ 'ep01-invoice': 'lunch-invoice', 'ep02-pipeline': 'lunch-video', 'ep03-foodcheck': 'lunch-foodcheck' }[ep.slug]}/PROMPT.md`, 'utf8').split('\n').slice(2).join('\n').trim(); } catch {}
   const lede = d.description.split('\n\n')[0];
   const scorecard = d.scenes.find((s) => s.id.endsWith('scorecard'));
   const body = d.scenes
