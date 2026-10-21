@@ -1,0 +1,12 @@
+# GitHub Pages (legacy Jekyll build). Pages copies plain HTML as is; this only keeps tooling out of the published site.
+exclude:
+  - .claude
+  - tests
+  - node_modules
+  - package.json
+  - package-lock.json
+  - playwright.config.ts
+  - build-posts.mjs
+  - README.md
+  - test-results
+  - playwright-report

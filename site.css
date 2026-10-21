@@ -1,0 +1,124 @@
+/* appbeforelunch.com: one stylesheet for every page.
+   Light warm ground, one ink, lime once per screen (the action), red only for bugs, dark only behind terminal frames. */
+/* Metric-matched fallback so the web font swap does not shift the layout (CLS). */
+@font-face{font-family:"ABL Fallback";font-weight:100 500;src:local("Arial"),local("ArialMT");size-adjust:103.8%;ascent-override:94.4%;descent-override:25%;line-gap-override:0%}
+@font-face{font-family:"ABL Fallback";font-weight:600 900;src:local("Arial Bold"),local("Arial-BoldMT");size-adjust:103.6%;ascent-override:94.6%;descent-override:25.1%;line-gap-override:0%}
+:root{
+  --ground:#F3EEE4; --ground-2:#E8E0D0; --ink:#1C1B19; --ink-2:#4A463F; --line:#C9BFAC;
+  --lime:#C6FF3D; --bug:#A3231B; --term:#0B0F19;
+  --face:"Schibsted Grotesk","ABL Fallback",ui-sans-serif,system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; /* taste-skill-ignore: used only for the verbatim prompt text */
+  --gutter:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--face);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.025em;line-height:1.02}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+
+.skip{position:absolute;left:var(--gutter);top:-80px;z-index:10;background:var(--ink);color:var(--ground);padding:10px 16px;font-weight:600}
+.skip:focus{top:8px}
+main:focus{outline:none}
+
+/* Bar */
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;letter-spacing:-.01em}
+.brand img{width:32px;height:32px}
+.bar nav{display:flex;gap:24px;font-size:17px}
+.bar nav a{text-decoration:none}
+.bar nav a:hover{text-decoration:underline}
+
+/* Hero */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,112px)}
+.hero h1{font-size:clamp(40px,8.6vw,112px);letter-spacing:-.04em;line-height:.95;max-width:9.6em}
+.hero-row{display:grid;gap:32px;margin-top:clamp(28px,4vw,48px)}
+.lede{font-size:clamp(17px,1.9vw,23px);line-height:1.45;max-width:20.8em}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+.btn{display:inline-block;background:var(--lime);color:var(--ink);padding:16px 24px;font-weight:800;font-size:17px;text-decoration:none}
+.btn:hover{background:#B5F21F}
+.more{font-weight:600}
+.rules{font-size:17px;line-height:1.6;background:var(--ground-2);padding:24px 26px;align-self:start;max-width:29.4em}
+@media (min-width:900px){.hero-row{grid-template-columns:1.1fr .9fr;gap:64px}.rules{justify-self:end}}
+
+/* Episodes */
+.episodes{padding:clamp(48px,7vw,96px) 0}
+.episodes>.wrap>h2,.ledger h2,.follow h2{font-size:clamp(34px,4.6vw,60px)}
+.sub{color:var(--ink-2);margin-top:12px;font-size:17px}
+.tag{font-size:15px;font-weight:600;color:var(--ink-2);margin:0 0 12px}
+.frame{margin:0}
+.frame.dark{background:var(--term)}
+.feature{display:grid;gap:28px;margin-top:clamp(32px,4vw,56px)}
+.feature h3{font-size:clamp(30px,3.4vw,44px);margin-bottom:8px}
+.feature-text p:not(.tag):not(.actions){max-width:34em}
+@media (min-width:1000px){.feature{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:20px;font-size:17px}
+.watch,.actions a.primary{background:var(--ink);color:var(--ground);padding:10px 18px;font-weight:600;text-decoration:none}
+.watch:hover,.actions a.primary:hover{background:#000}
+
+.list{list-style:none;margin:clamp(56px,7vw,96px) 0 0;padding:0;display:grid;gap:clamp(40px,5vw,64px)}
+.ep{display:grid;gap:20px}
+.ep h3{font-size:clamp(23px,2.4vw,30px);margin-bottom:8px}
+.ep-text p:not(.tag):not(.actions){max-width:38em;font-size:17px}
+@media (min-width:900px){.ep.has-frame{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:start}.ep.has-frame .frame{margin-top:6px}}
+.next{margin-top:clamp(40px,5vw,64px)}
+
+/* Scorecard: one table across episodes */
+.ledger{background:var(--ground-2);padding:clamp(48px,7vw,96px) 0}
+.table-scroll{margin-top:28px}
+table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+thead th{font-size:15px;font-weight:600;color:var(--ink-2)}
+tbody th{font-weight:800;white-space:nowrap}
+td.bug{color:var(--bug);font-weight:600}
+.also{display:block;color:var(--ink-2);font-weight:400;font-size:15px;margin-top:4px}
+.k{font-weight:400}
+@media (max-width:759px){
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table,tbody,tr,th,td{display:block}
+  tr{padding:16px 0;border-bottom:1px solid var(--line)}
+  tbody th,td{border:0;padding:3px 0}
+  tbody th{font-size:23px;margin-bottom:6px}
+  td:empty{display:none}
+  td::before{content:attr(data-k);display:block;font-size:14px;font-weight:600;color:var(--ink-2)}
+}
+
+/* Follow */
+.follow{padding:clamp(48px,7vw,96px) 0}
+.social{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:28px;font-size:clamp(23px,2.6vw,30px);font-weight:800;letter-spacing:-.02em}
+
+/* Footer */
+footer{padding:48px 0 56px;font-size:15px;color:var(--ink-2);background:var(--ground-2)}
+footer p{margin:6px 0;max-width:49em}
+footer a{color:var(--ink)}
+footer .name{font-size:clamp(44px,7vw,112px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink);margin:0 0 24px}
+
+/* Small pages: privacy and posts */
+.page{padding:clamp(32px,5vw,64px) 0 72px}
+.page .wrap{max-width:780px}
+.page h1{font-size:clamp(38px,6vw,64px);letter-spacing:-.035em;line-height:1;margin:0 0 14px}
+.page h2{font-size:clamp(24px,2.6vw,30px);margin:44px 0 10px}
+.page p,.page li{font-size:18px;margin:0 0 16px}
+.page .date,.page .kicker{color:var(--ink-2);font-size:16px;font-weight:600} /* taste-skill-ignore: episode number and date, real content */
+.page .kicker{margin:0 0 12px} /* taste-skill-ignore: same */
+.page .lede{max-width:none;margin:0 0 24px}
+.page .actions{margin:0 0 32px}
+.page .warn{background:var(--ground-2);padding:16px 20px;margin:0 0 28px}
+.page ul.bullets{padding-left:22px}
+.page ul.bullets li{margin:0 0 6px}
+.page .score{background:var(--ground-2);padding:18px 22px;margin:0 0 18px;line-height:1.8}
+.page .prompt{background:var(--term);color:#F3EEE4;padding:20px 22px;white-space:pre-wrap;font:15px/1.6 var(--mono);margin:0 0 18px;overflow-wrap:anywhere}
+.page .muted{color:var(--ink-2);font-size:15px}
+.video{margin:0 0 36px;background:var(--term);aspect-ratio:16/9;position:relative}
+.video a{position:absolute;inset:0;display:flex;align-items:flex-end;padding:20px;color:var(--ground);font-weight:800;font-size:20px;text-decoration:none}
+.video a span{background:var(--ink);padding:10px 16px}
+.video a:hover span{text-decoration:underline}
+.video img,.video iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.small-footer{padding:28px 0;font-size:15px;color:var(--ink-2);background:var(--ground-2)}
+.small-footer a{color:var(--ink)}
+@media (max-width:640px){.bar nav{display:none}}
