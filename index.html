@@ -12,7 +12,7 @@
 <meta name="color-scheme" content="light">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -23,29 +23,28 @@
 </div></header>
 
 <main id="main" tabindex="-1">
-  <section class="hero"><div class="wrap">
+  <section class="hero dark"><div class="wrap hero-grid">
     <h1>Can AI build an app before lunch?</h1>
-    <div class="hero-row">
-      <div>
-        <p class="lede">Every week I give Claude Code one prompt and a timer, and I report what actually happens. The apps are free, the prompts are public, and the bugs stay in the video.</p>
-        <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#episodes">Latest build</a></p>
-      </div>
-      <p class="rules" id="rules"><b>One prompt.</b> No back and forth. What you see typed is the whole brief. <b>AI writes it all.</b> The code and the tests. I never touch the source. <b>I only use the app.</b> Bugs get reported the way a client would, not a programmer.</p>
-    </div>
+    <p class="lede">Every week I give Claude Code one prompt and a timer, and I report what actually happens. The apps are free, the prompts are public, and the bugs stay in the video.</p>
+    <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#episodes">Latest build</a></p>
+    <figure class="hero-frame">
+      <img src="img/hero-ep02-1440.webp" srcset="img/hero-ep02-720.webp 720w, img/hero-ep02-1440.webp 1440w" sizes="(min-width: 960px) 680px, calc(100vw - 32px)" width="1440" height="810" fetchpriority="high"
+        alt="The real terminal from episode 2, elapsed clock 00:38 in the title bar: Chrome Headless Shell downloads to 85.4 of 85.4 Mb, then Claude Code says I'll wait for the notification and stops. That line is boxed in red: the build froze there.">
+      <img class="mascot react" src="mascot.svg" width="320" height="364" alt="The App Before Lunch mascot, tilted toward the frozen line.">
+    </figure>
+    <p class="rules" id="rules">One prompt. No back and forth. What you see typed is the whole brief. AI writes it all. The code and the tests. I never touch the source. I only use the app. Bugs get reported the way a client would, not a programmer.</p>
   </div></section>
 
   <section id="episodes" class="episodes"><div class="wrap">
     <h2>Episodes</h2>
     <p class="sub">Newest first. Every build ships with its prompt and source on GitHub.</p>
 
-    <article class="feature">
-      <figure class="frame dark">
-        <img src="img/ep06-meter-1400.webp" srcset="img/ep06-meter-700.webp 700w, img/ep06-meter-1400.webp 1400w" sizes="(min-width: 1000px) 640px, 100vw" width="1400" height="674" fetchpriority="high"
-          alt="The status line from episode 6 in a terminal: 5h 13% resets 12:10am, week 47% resets Mon 3am. Label: Real reading, re-typeset from a live capture.">
-      </figure>
+    <article class="ep feature">
+      <figure class="frame"><img src="img/ep06-bug-560.webp" srcset="img/ep06-bug-560.webp 560w, img/ep06-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The status line from episode 6 in a terminal: 5h 13% resets 12:10am, week 47% resets Mon 3am. Label: Real reading, re-typeset from a live capture."></figure>
       <div class="feature-text">
         <h3>See your Claude Code limit before you hit it</h3>
-        <p class="tag">EP 06 · USAGE LIMITS</p>
+        <p class="tag">Ep 06 · Usage limits</p>
         <p>A status line that shows how much of your 5-hour and weekly Claude Code limit you have used, and when each one resets. One prompt, about four minutes, an installer and 41 checks. It reads the field Claude Code already sends, so no network calls and no estimates. It cannot see model-specific limits.</p>
         <p class="actions">
           <a class="watch" href="https://www.youtube.com/watch?v=qcxpuCKRqPw">Watch</a>
@@ -56,10 +55,12 @@
     </article>
 
     <ol class="list" reversed start="5">
-      <li class="ep has-frame">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep05-bug-560.webp" srcset="img/ep05-bug-560.webp 560w, img/ep05-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="One of the wrong banners from episode 5: ai-channel finished, All three changes are live and verified after reloads, a reply from an earlier turn. Label: Replayed from the live-test log."></figure>
         <div class="ep-text">
           <h3>Get notified when Claude Code finishes</h3>
-          <p class="tag">EP 05 · NOTIFICATIONS</p>
+          <p class="tag">Ep 05 · Notifications</p>
           <p>A kit that tells you when a Claude Code run ends: a macOS banner, a spoken line, and an optional phone push. Version 1 stopped mid-sentence, and on a real Mac it read the wrong reply on 39 of 231 banners. Four sessions later, reading one field from the hook payload first fixed it.</p>
           <p class="actions">
             <a class="watch" href="https://www.youtube.com/watch?v=1tjh4OmDaiE">Watch</a>
@@ -67,13 +68,13 @@
             <a href="https://github.com/appbeforelunch/lunch-notify">Source</a>
           </p>
         </div>
-        <figure class="frame dark"><img src="img/ep05-banner.webp" width="700" height="152" loading="lazy"
-          alt="One of the wrong banners from episode 5: ai-channel finished, All three changes are live and verified after reloads, a reply from an earlier turn."></figure>
       </li>
-      <li class="ep has-frame">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep04-bug-560.webp" srcset="img/ep04-bug-560.webp 560w, img/ep04-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The extension on the episode 4 test page: a 1 lb 11.5 oz pizza read as 16 oz, so the best value tag sits on the 24 oz pizza; the real price is $0.29 per ounce."></figure>
         <div class="ep-text">
           <h3>My Claude Code Chrome extension picked the worst deal</h3>
-          <p class="tag">EP 04 · CHROME EXTENSION</p>
+          <p class="tag">Ep 04 · Chrome extension</p>
           <p>A Chrome extension that shows the real price per ounce on Amazon results and tags the best value. Seven minutes, every test passing, then a "1 lb 11.5 oz" label put the best value tag on the worst deal. A one-sentence bug report fixed it in under four minutes. One search on the real Amazon still crowned a wrong pick. Not affiliated with Amazon.</p>
           <p class="actions">
             <a class="watch" href="https://www.youtube.com/watch?v=9B1pi4yKmbE">Watch</a>
@@ -81,13 +82,13 @@
             <a href="https://github.com/appbeforelunch/lunch-unitprice">Source</a>
           </p>
         </div>
-        <figure class="frame"><img src="img/ep04-price.webp" width="1260" height="380" loading="lazy"
-          alt="The extension on the episode 4 test page: a 1 lb 11.5 oz pizza read as 16 oz, so the best value tag sits on the 24 oz pizza; the real price is $0.29 per ounce."></figure>
       </li>
       <li class="ep">
+        <figure class="frame"><img src="img/ep03-bug-560.webp" srcset="img/ep03-bug-560.webp 560w, img/ep03-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="Our pregnancy food checker from episode 3: Wine, Avoid, No amount of alcohol is known to be safe during pregnancy, with its Source link pointing at acog.org healthy-eating-during-pregnancy, a page that never mentions alcohol."></figure>
         <div class="ep-text">
           <h3>AI built my health app in 5 minutes. Then I clicked &quot;Source.&quot;</h3>
-          <p class="tag">EP 03 · PREGNANCY FOOD CHECKER</p>
+          <p class="tag">Ep 03 · Pregnancy food checker</p>
           <p>Type a food and see what public FDA, ACOG and CDC guidance says about it in pregnancy, with a source on every answer. Five minutes and 90 rules, but the page cited for alcohol never mentions alcohol. Three short bug reports later: 107 rules, each pointing at a page that actually says it. Not medical advice.</p>
           <p class="actions">
             <a class="watch" href="https://www.youtube.com/watch?v=jt-_8jG8GNs">Watch</a>
@@ -97,10 +98,12 @@
           </p>
         </div>
       </li>
-      <li class="ep has-frame">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep02-bug-560.webp" srcset="img/ep02-bug-560.webp 560w, img/ep02-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The terminal from episode 2: Build failed: No browser found for rendering frames! in red, after the Chrome download had stopped silently."></figure>
         <div class="ep-text">
           <h3>Can AI build the machine that made this video?</h3>
-          <p class="tag">EP 02 · THE VIDEO MACHINE</p>
+          <p class="tag">Ep 02 · The video machine</p>
           <p>Every episode here is rendered by code. I gave Claude Code an empty folder and one prompt to rebuild that pipeline. Fifteen minutes to a first run, a freeze on the browser download, two bug reports, and a clean one-command build in 27 seconds.</p>
           <p class="actions">
             <a class="watch" href="https://www.youtube.com/watch?v=N4y15sT-9og">Watch</a>
@@ -109,13 +112,13 @@
             <a href="https://github.com/appbeforelunch/lunch-video">Source</a>
           </p>
         </div>
-        <figure class="frame dark"><img src="img/ep02-hang.webp" width="1000" height="542" loading="lazy"
-          alt="The terminal from episode 2, stopped after Downloading Chrome Headless Shell 85.4 Mb of 85.4 Mb, with Claude Code saying it will wait for the notification."></figure>
       </li>
-      <li class="ep has-frame">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep01-bug-560.webp" srcset="img/ep01-bug-560.webp 560w, img/ep01-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The invoicing app from episode 1 with a sample client, the issued date circled in red: the bug that dated evening invoices tomorrow."></figure>
         <div class="ep-text">
           <h3>Can AI build my LLC's invoicing app before lunch?</h3>
-          <p class="tag">EP 01 · INVOICING</p>
+          <p class="tag">Ep 01 · Invoicing</p>
           <p>I'm forming an LLC and refuse to pay $30 a month for invoices. One prompt, three minutes, fourteen passing tests, and one bug the tests could not see: evening invoices were dated tomorrow.</p>
           <p class="actions">
             <a class="watch" href="https://www.youtube.com/watch?v=coD7vvNehcY">Watch</a>
@@ -125,25 +128,23 @@
             <a href="https://github.com/appbeforelunch/lunch-invoice">Source</a>
           </p>
         </div>
-        <figure class="frame"><img src="img/ep01-date.webp" width="1000" height="376" loading="lazy"
-          alt="The invoicing app from episode 1 with a sample client, the issued date circled in red: the bug that dated evening invoices tomorrow."></figure>
       </li>
     </ol>
     <p class="next"><b>Next, Friday October 23:</b> a browser photo editor from one prompt.</p>
   </div></section>
 
-  <section id="scorecard" class="ledger"><div class="wrap">
+  <section id="scorecard" class="ledger dark"><div class="wrap">
     <h2>Scorecard</h2>
     <div class="table-scroll">
     <table>
-      <thead><tr><th scope="col">Episode</th><th scope="col">Build</th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
+      <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">lunch</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
       <tbody>
-        <tr><th scope="row">EP 06</th><td data-k="Build">about 4 min</td><td data-k="Tests">41 checks, 17 payloads<span class="also">network: none, stdin only</span></td><td data-k="Bug" class="bug"><span class="k">blind spot:</span> model-specific limits</td><td data-k="Cost">$1.19 at API prices, covered by Claude + ElevenLabs plans</td></tr>
+        <tr><th scope="row">EP 06</th><td data-k="Build">about 4 min<span class="clock" style="--m:4" aria-hidden="true"></span></td><td data-k="Tests">41 checks, 17 payloads<span class="also">network: none, stdin only</span></td><td data-k="Bug" class="bug"><span class="k">blind spot:</span> model-specific limits</td><td data-k="Cost">$1.19 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 05</th><td data-k="Build">sessions: 4</td><td data-k="Tests">46 / 46</td><td data-k="Bug" class="bug">wrong reply on 39 of 231 banners<span class="also">habit: called a fix that made it worse</span></td><td data-k="Cost">$10.08 at API prices, covered by Claude + ElevenLabs plans</td></tr>
-        <tr><th scope="row">EP 04</th><td data-k="Build">about 7 min<span class="also">fix: under 4 min</span></td><td data-k="Tests">61 tests</td><td data-k="Bug" class="bug">read 1 lb 11.5 oz as 1 lb<span class="also">live run: wrong best value on real Amazon</span></td><td data-k="Cost">$3.87 at API prices, covered by Claude + ElevenLabs plans</td></tr>
-        <tr><th scope="row">EP 03</th><td data-k="Build">5 min<span class="also">fixes: 3 bug reports</span></td><td data-k="Tests">rules: 90, then 107 sourced</td><td data-k="Bug" class="bug">right rules, wrong citations</td><td data-k="Cost">$0 on top of Claude + ElevenLabs plans</td></tr>
-        <tr><th scope="row">EP 02</th><td data-k="Build">15 min<span class="also">fixes: 2 rounds, 5 min</span><span class="also">clean run: 27 s</span></td><td data-k="Tests"></td><td data-k="Bug" class="bug">dependency unzip fails silently<span class="also">habit: stopped to "wait", twice</span></td><td data-k="Cost">$0 on top of Claude + ElevenLabs plans</td></tr>
-        <tr><th scope="row">EP 01</th><td data-k="Build">3 min<span class="also">fix: 1 min</span></td><td data-k="Tests">14 / 14</td><td data-k="Bug" class="bug">UTC dated invoices tomorrow</td><td data-k="Cost">$0 on top of a Claude plan<span class="also">verdict: using it for the LLC</span></td></tr>
+        <tr><th scope="row">EP 04</th><td data-k="Build">about 7 min<span class="clock" style="--m:7" aria-hidden="true"></span><span class="also">fix: under 4 min</span></td><td data-k="Tests">61 tests</td><td data-k="Bug" class="bug">read 1 lb 11.5 oz as 1 lb<span class="also">live run: wrong best value on real Amazon</span></td><td data-k="Cost">$3.87 at API prices, covered by Claude + ElevenLabs plans</td></tr>
+        <tr><th scope="row">EP 03</th><td data-k="Build">5 min<span class="clock" style="--m:5" aria-hidden="true"></span><span class="also">fixes: 3 bug reports</span></td><td data-k="Tests">rules: 90, then 107 sourced</td><td data-k="Bug" class="bug">right rules, wrong citations</td><td data-k="Cost">$0 on top of Claude + ElevenLabs plans</td></tr>
+        <tr><th scope="row">EP 02</th><td data-k="Build">15 min<span class="clock" style="--m:15" aria-hidden="true"></span><span class="also">fixes: 2 rounds, 5 min</span><span class="also">clean run: 27 s</span></td><td data-k="Tests"></td><td data-k="Bug" class="bug">dependency unzip fails silently<span class="also">habit: stopped to "wait", twice</span></td><td data-k="Cost">$0 on top of Claude + ElevenLabs plans</td></tr>
+        <tr><th scope="row">EP 01</th><td data-k="Build">3 min<span class="clock" style="--m:3" aria-hidden="true"></span><span class="also">fix: 1 min</span></td><td data-k="Tests">14 / 14</td><td data-k="Bug" class="bug">UTC dated invoices tomorrow</td><td data-k="Cost">$0 on top of a Claude plan<span class="also">verdict: using it for the LLC</span></td></tr>
       </tbody>
     </table>
     </div>
@@ -164,7 +165,7 @@
 </main>
 
 <footer><div class="wrap">
-  <p class="name">App Before Lunch</p>
+  <p class="name"><img src="mascot.svg" width="56" height="64" alt="The App Before Lunch mascot: a lime chat bubble with a prompt cursor.">App Before Lunch</p>
   <p>© 2026 App Before Lunch. Apps and prompts are released under the MIT license unless a repo says otherwise.</p>
   <p>Disclosure: the narration is an AI clone of the host's own voice. The apps are generated by Claude Code, which runs on a paid Claude subscription, and narrated through a paid ElevenLabs plan (neither sponsored). Everything is shown as recorded.</p>
   <p><a href="privacy.html">Privacy policy</a></p>
