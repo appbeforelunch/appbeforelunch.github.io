@@ -42,21 +42,35 @@
     <p class="sub">Newest first. Every build ships with its prompt and source on GitHub.</p>
 
     <article class="ep feature">
-      <figure class="frame"><img src="img/ep06-bug-560.webp" srcset="img/ep06-bug-560.webp 560w, img/ep06-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
-          alt="The status line from episode 6 in a terminal: 5h 13% resets 12:10am, week 47% resets Mon 3am. Label: Real reading, re-typeset from a live capture."></figure>
+      <figure class="frame"><img src="img/ep07-bug-560.webp" srcset="img/ep07-bug-560.webp 560w, img/ep07-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="Tessera, the photo editor Claude Code built in episode 7, in the crop tool: the test robot clicks Cancel with no crop box drawn, nothing changes, and it flags the button as doing nothing. Label: The robot's own recording."></figure>
       <div class="feature-text">
-        <h3>See your Claude Code limit before you hit it</h3>
-        <p class="tag">Ep 06 · Usage limits</p>
-        <p>A status line that shows how much of your 5-hour and weekly Claude Code limit you have used, and when each one resets. One prompt, about four minutes, an installer and 41 checks. It reads the field Claude Code already sends, so no network calls and no estimates. It cannot see model-specific limits.</p>
+        <h3>I asked Claude Code for Photoshop. Then a robot clicked every button.</h3>
+        <p class="tag">Ep 07 · Photo editor</p>
+        <p>One prompt asked for a browser photo editor, and about 25 minutes later Claude Code had built Tessera, with layers, filters, text and undo. A test program clicked all 281 controls and flagged 64 as doing nothing. Tried again the way a person uses them, all 64 work: the mistakes were the checker's. Not affiliated with Adobe.</p>
         <p class="actions">
-          <a class="watch" href="https://www.youtube.com/watch?v=qcxpuCKRqPw">Watch</a>
-          <a href="https://github.com/appbeforelunch/lunch-limits/blob/main/PROMPT.md">The prompt</a>
-          <a href="https://github.com/appbeforelunch/lunch-limits">Source</a>
+          <a class="watch" href="https://www.youtube.com/watch?v=vHpiqrIhlwk">Watch</a>
+          <a href="https://github.com/appbeforelunch/lunch-pixels/blob/main/PROMPT.md">The prompt</a>
+          <a href="https://github.com/appbeforelunch/lunch-pixels">Source</a>
         </p>
       </div>
     </article>
 
-    <ol class="list" reversed start="5">
+    <ol class="list" reversed start="6">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep06-bug-560.webp" srcset="img/ep06-bug-560.webp 560w, img/ep06-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+            alt="The status line from episode 6 in a terminal: 5h 13% resets 12:10am, week 47% resets Mon 3am. Label: Real reading, re-typeset from a live capture."></figure>
+        <div class="ep-text">
+          <h3>See your Claude Code limit before you hit it</h3>
+          <p class="tag">Ep 06 · Usage limits</p>
+          <p>A status line that shows how much of your 5-hour and weekly Claude Code limit you have used, and when each one resets. One prompt, about four minutes, an installer and 41 checks. It reads the field Claude Code already sends, so no network calls and no estimates. It cannot see model-specific limits.</p>
+          <p class="actions">
+            <a class="watch" href="https://www.youtube.com/watch?v=qcxpuCKRqPw">Watch</a>
+            <a href="https://github.com/appbeforelunch/lunch-limits/blob/main/PROMPT.md">The prompt</a>
+            <a href="https://github.com/appbeforelunch/lunch-limits">Source</a>
+          </p>
+        </div>
+      </li>
       <li class="ep">
         <figure class="frame"><img src="img/ep05-bug-560.webp" srcset="img/ep05-bug-560.webp 560w, img/ep05-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
           alt="One of the wrong banners from episode 5: ai-channel finished, All three changes are live and verified after reloads, a reply from an earlier turn. Label: Replayed from the live-test log."></figure>
@@ -132,7 +146,6 @@
         </div>
       </li>
     </ol>
-    <p class="next"><b>Next, Friday October 23:</b> a browser photo editor from one prompt.</p>
   </div></section>
 
   <section id="scorecard" class="ledger dark"><div class="wrap">
@@ -141,6 +154,7 @@
     <table>
       <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">1 hr</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
       <tbody>
+        <tr><th scope="row">EP 07</th><td data-k="Build">about 25 min<span class="clock" style="--m:25" aria-hidden="true"></span></td><td data-k="Tests">controls: 281 clicked by a robot<span class="also">re-test: 0 of 64 really dead</span></td><td data-k="Bug" class="bug"><span class="k">flagged:</span> 64 "do nothing"</td><td data-k="Cost">$6.02 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 06</th><td data-k="Build">about 4 min<span class="clock" style="--m:4" aria-hidden="true"></span></td><td data-k="Tests">41 checks, 17 payloads<span class="also">network: none, stdin only</span></td><td data-k="Bug" class="bug"><span class="k">blind spot:</span> model-specific limits</td><td data-k="Cost">$1.19 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 05</th><td data-k="Build">sessions: 4</td><td data-k="Tests">46 / 46</td><td data-k="Bug" class="bug">wrong reply on 39 of 231 banners<span class="also">habit: called a fix that made it worse</span></td><td data-k="Cost">$10.08 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 04</th><td data-k="Build">about 7 min<span class="clock" style="--m:7" aria-hidden="true"></span><span class="also">fix: under 4 min</span></td><td data-k="Tests">61 tests</td><td data-k="Bug" class="bug">read 1 lb 11.5 oz as 1 lb<span class="also">live run: wrong best value on real Amazon</span></td><td data-k="Cost">$3.87 at API prices, covered by Claude + ElevenLabs plans</td></tr>
