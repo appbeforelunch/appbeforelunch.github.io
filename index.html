@@ -52,20 +52,17 @@
   .ep .actions a.primary{background:var(--lime);color:#0B0F19;border-color:var(--lime)}
   .ep .actions a:hover{text-decoration:none;border-color:var(--lime)}
   .score{background:var(--bg);border-radius:14px;padding:18px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.9;border:1px solid var(--line)}
-  .score i{color:var(--muted);font-style:normal;display:inline-block;width:110px}
+  .score>div{display:flex;line-height:1.5;padding:4px 0}
+  .score i{color:var(--muted);font-style:normal;flex:0 0 110px}
   .score .ok{color:var(--lime)}.score .bad{color:#ff8a8a}
   .next{margin-top:16px;color:var(--muted);font-size:15px}
   .next b{color:var(--text)}
-  .news{background:linear-gradient(135deg,#161D30,#0F1424);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
-  .news h3{font-size:22px;margin-bottom:6px}
-  .news p{color:var(--muted);margin:0}
-  .soon{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--orange);border:1px dashed var(--orange);padding:10px 14px;border-radius:10px;white-space:nowrap}
   .social{display:flex;gap:12px;flex-wrap:wrap}
   .social a{border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:var(--text);font-size:14px}
   .social a:hover{border-color:var(--lime);text-decoration:none}
   footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13px}
   footer p{margin:6px 0}
-  @media(max-width:760px){.rules{grid-template-columns:1fr}.ep{grid-template-columns:1fr}.news{grid-template-columns:1fr}nav .links{display:none}}
+  @media(max-width:760px){.rules{grid-template-columns:1fr}.ep{grid-template-columns:1fr}nav .links{display:none}.ep{padding:20px}.score i{flex-basis:92px}}
 </style>
 </head>
 <body>
@@ -89,8 +86,89 @@
 
   <section id="episodes"><div class="wrap">
     <h2>Episodes</h2>
-    <div class="sub">Every build ships with a written post, its prompt, source, and a live demo.</div>
+    <div class="sub">Newest first. Every build ships with its prompt and source on GitHub.</div>
     
+    <div class="ep">
+      <div>
+        <div class="tag">EP 06 · USAGE LIMITS</div>
+        <h3>See your Claude Code limit before you hit it</h3>
+        <p>A status line that shows how much of your 5-hour and weekly Claude Code limit you have used, and when each one resets. One prompt, about four minutes, an installer and 41 checks. It reads the field Claude Code already sends, so no network calls and no estimates. It cannot see model-specific limits.</p>
+        <div class="actions">
+          <a class="primary" href="https://www.youtube.com/watch?v=qcxpuCKRqPw">Watch</a>
+          <a href="https://github.com/appbeforelunch/lunch-limits/blob/main/PROMPT.md">The prompt</a>
+          <a href="https://github.com/appbeforelunch/lunch-limits">Source</a>
+        </div>
+      </div>
+      <div class="score">
+        <div><i>build</i><span class="ok">about 4 min</span></div>
+        <div><i>tests</i><span class="ok">41 checks, 17 payloads</span></div>
+        <div><i>network</i><span class="ok">none, stdin only</span></div>
+        <div><i>blind spot</i><span class="bad">model-specific limits</span></div>
+        <div><i>cost</i><span class="ok">$1.19 at API prices, covered by Claude + ElevenLabs plans</span></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="ep">
+      <div>
+        <div class="tag">EP 05 · NOTIFICATIONS</div>
+        <h3>Get notified when Claude Code finishes</h3>
+        <p>A kit that tells you when a Claude Code run ends: a macOS banner, a spoken line, and an optional phone push. Version 1 stopped mid-sentence, and on a real Mac it read the wrong reply on 39 of 231 banners. Four sessions later, reading one field from the hook payload first fixed it.</p>
+        <div class="actions">
+          <a class="primary" href="https://www.youtube.com/watch?v=1tjh4OmDaiE">Watch</a>
+          <a href="https://github.com/appbeforelunch/lunch-notify/blob/main/PROMPT.md">The prompt</a>
+          <a href="https://github.com/appbeforelunch/lunch-notify">Source</a>
+        </div>
+      </div>
+      <div class="score">
+        <div><i>sessions</i><span class="ok">4</span></div>
+        <div><i>tests</i><span class="ok">46 / 46</span></div>
+        <div><i>bug</i><span class="bad">wrong reply on 39 of 231 banners</span></div>
+        <div><i>habit</i><span class="bad">called a fix that made it worse</span></div>
+        <div><i>cost</i><span class="ok">$10.08 at API prices, covered by Claude + ElevenLabs plans</span></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="ep">
+      <div>
+        <div class="tag">EP 04 · CHROME EXTENSION</div>
+        <h3>My Claude Code Chrome extension picked the worst deal</h3>
+        <p>A Chrome extension that shows the real price per ounce on Amazon results and tags the best value. Seven minutes, every test passing, then a "1 lb 11.5 oz" label put the best value tag on the worst deal. A one-sentence bug report fixed it in under four minutes. One search on the real Amazon still crowned a wrong pick. Not affiliated with Amazon.</p>
+        <div class="actions">
+          <a class="primary" href="https://www.youtube.com/watch?v=9B1pi4yKmbE">Watch</a>
+          <a href="https://github.com/appbeforelunch/lunch-unitprice/blob/main/PROMPT.md">The prompt</a>
+          <a href="https://github.com/appbeforelunch/lunch-unitprice">Source</a>
+        </div>
+      </div>
+      <div class="score">
+        <div><i>build</i><span class="ok">about 7 min</span></div>
+        <div><i>fix</i><span class="ok">under 4 min, 61 tests</span></div>
+        <div><i>bug</i><span class="bad">read 1 lb 11.5 oz as 1 lb</span></div>
+        <div><i>live run</i><span class="bad">wrong best value on real Amazon</span></div>
+        <div><i>cost</i><span class="ok">$3.87 at API prices, covered by Claude + ElevenLabs plans</span></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="ep">
+      <div>
+        <div class="tag">EP 03 · PREGNANCY FOOD CHECKER</div>
+        <h3>AI built my health app in 5 minutes. Then I clicked &quot;Source.&quot;</h3>
+        <p>Type a food and see what public FDA, ACOG and CDC guidance says about it in pregnancy, with a source on every answer. Five minutes and 90 rules, but the page cited for alcohol never mentions alcohol. Three short bug reports later: 107 rules, each pointing at a page that actually says it. Not medical advice.</p>
+        <div class="actions">
+          <a class="primary" href="https://www.youtube.com/watch?v=jt-_8jG8GNs">Watch</a>
+          <a href="https://appbeforelunch.com/lunch-foodcheck/">Try the app</a>
+          <a href="https://github.com/appbeforelunch/lunch-foodcheck/blob/main/PROMPT.md">The prompt</a>
+          <a href="https://github.com/appbeforelunch/lunch-foodcheck">Source</a>
+        </div>
+      </div>
+      <div class="score">
+        <div><i>build</i><span class="ok">5 min</span></div>
+        <div><i>rules</i><span class="ok">90, then 107 sourced</span></div>
+        <div><i>bug</i><span class="bad">right rules, wrong citations</span></div>
+        <div><i>fixes</i><span class="ok">3 bug reports</span></div>
+        <div><i>cost</i><span class="ok">$0 on top of Claude + ElevenLabs plans</span></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
     <div class="ep">
       <div>
         <div class="tag">EP 02 · THE VIDEO MACHINE</div>
@@ -135,14 +213,7 @@
         <div><i>verdict</i><span class="ok">using it for the LLC</span></div>
       </div>
     </div>
-    <div class="next"><b>Next:</b> a Chrome extension that shows the real price per ounce while you shop.</div>
-  </div></section>
-
-  <section><div class="wrap">
-    <div class="news">
-      <div><h3>The prompt for every build, in your inbox</h3><p>One email per episode: the prompt, the app, and the scorecard. No filler.</p></div>
-      <div class="soon">newsletter coming soon</div>
-    </div>
+    <div class="next"><b>Next, Friday October 23:</b> a browser photo editor from one prompt.</div>
   </div></section>
 
   <section id="follow"><div class="wrap">
@@ -151,8 +222,7 @@
     <div class="social">
       <a href="https://www.youtube.com/@AppBeforeLunch">YouTube</a>
       <a href="https://www.instagram.com/appbeforelunch">Instagram</a>
-      <a href="https://www.tiktok.com/@app.before.lunch">TikTok</a>
-      <a href="https://x.com/AppBeforeLunch">X</a>
+      <a href="https://www.tiktok.com/@appbeforelunch">TikTok</a>
       <a href="https://www.facebook.com/appbeforelunch">Facebook</a>
       <a href="https://github.com/appbeforelunch">GitHub</a>
       <a href="mailto:contact@appbeforelunch.com">Email</a>
@@ -163,6 +233,7 @@
 <footer><div class="wrap">
   <p>© 2026 App Before Lunch. Apps and prompts are released under the MIT license unless a repo says otherwise.</p>
   <p>Disclosure: the narration is an AI clone of the host's own voice. The apps are generated by Claude Code, which runs on a paid Claude subscription, and narrated through a paid ElevenLabs plan (neither sponsored). Everything is shown as recorded.</p>
+  <p><a href="privacy.html">Privacy policy</a></p>
 </div></footer>
 </body>
 </html>
