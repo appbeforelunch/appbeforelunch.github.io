@@ -51,8 +51,9 @@ main:focus{outline:none}
 .btn:hover{background:#B5F21F}
 .more{font-weight:600}
 .hero-frame{grid-area:f;margin:8px 0 0;position:relative}
-.hero-frame>img:first-child{width:100%}
+.hero-frame picture,.hero-frame .shot{display:block;width:100%}
 .mascot.react{position:absolute;left:44%;bottom:-4%;width:7.5%;height:auto;transform:rotate(-16deg)}
+@media (max-width:600px){.mascot.react{left:83%;bottom:-6%;width:13%}}
 .rules{grid-area:r;color:var(--on-term-2);font-size:17px;line-height:1.6;max-width:34em}
 @media (min-width:960px){
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,330px);column-gap:44px;row-gap:22px;align-items:start;
@@ -105,7 +106,7 @@ td.bug{color:var(--bug-on-term);font-weight:600}
   tbody th{font-size:23px;margin-bottom:6px}
   td:empty{display:none}
   td::before{content:attr(data-k);display:block;font-size:14px;font-weight:600;color:var(--on-term-2)}
-  tbody tr:first-child .clock::after{content:"lunch";position:absolute;right:-2px;bottom:14px;font-size:13px;color:var(--on-term-2)}
+  tbody tr:first-child .clock::after{content:"1 hr";position:absolute;right:-2px;bottom:14px;font-size:13px;color:var(--on-term-2)}
 }
 
 /* Follow */

@@ -28,8 +28,10 @@
     <p class="lede">Every week I give Claude Code one prompt and a timer, and I report what actually happens. The apps are free, the prompts are public, and the bugs stay in the video.</p>
     <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#episodes">Latest build</a></p>
     <figure class="hero-frame">
-      <img src="img/hero-ep02-1440.webp" srcset="img/hero-ep02-720.webp 720w, img/hero-ep02-1440.webp 1440w" sizes="(min-width: 960px) 680px, calc(100vw - 32px)" width="1440" height="810" fetchpriority="high"
-        alt="The real terminal from episode 2, elapsed clock 00:38 in the title bar: Chrome Headless Shell downloads to 85.4 of 85.4 Mb, then Claude Code says I'll wait for the notification and stops. That line is boxed in red: the build froze there.">
+      <picture>
+        <source media="(max-width: 600px)" srcset="img/hero-ep02-phone-640.webp 640w" sizes="calc(100vw - 32px)" width="640" height="448">
+        <img class="shot" src="img/hero-ep02-1440.webp" srcset="img/hero-ep02-720.webp 720w, img/hero-ep02-1440.webp 1440w" sizes="(min-width: 960px) 680px, calc(100vw - 32px)" width="1440" height="810" fetchpriority="high"
+        alt="The real terminal from episode 2, elapsed clock 00:38 in the title bar: Chrome Headless Shell downloads to 85.4 of 85.4 Mb, then Claude Code says I'll wait for the notification and stops. That line is boxed in red: the build froze there."></picture>
       <img class="mascot react" src="mascot.svg" width="320" height="364" alt="The App Before Lunch mascot, tilted toward the frozen line.">
     </figure>
     <p class="rules" id="rules">One prompt. No back and forth. What you see typed is the whole brief. AI writes it all. The code and the tests. I never touch the source. I only use the app. Bugs get reported the way a client would, not a programmer.</p>
@@ -137,7 +139,7 @@
     <h2>Scorecard</h2>
     <div class="table-scroll">
     <table>
-      <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">lunch</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
+      <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">1 hr</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
       <tbody>
         <tr><th scope="row">EP 06</th><td data-k="Build">about 4 min<span class="clock" style="--m:4" aria-hidden="true"></span></td><td data-k="Tests">41 checks, 17 payloads<span class="also">network: none, stdin only</span></td><td data-k="Bug" class="bug"><span class="k">blind spot:</span> model-specific limits</td><td data-k="Cost">$1.19 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 05</th><td data-k="Build">sessions: 4</td><td data-k="Tests">46 / 46</td><td data-k="Bug" class="bug">wrong reply on 39 of 231 banners<span class="also">habit: called a fix that made it worse</span></td><td data-k="Cost">$10.08 at API prices, covered by Claude + ElevenLabs plans</td></tr>
