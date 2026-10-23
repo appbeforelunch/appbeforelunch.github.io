@@ -227,3 +227,18 @@ test('publish: tooling is excluded from the Pages build', async ({}, info) => {
   const cfg = readFileSync(resolve(__dirname, '..', '_config.yml'), 'utf8');
   for (const x of ['.claude', 'tests', 'node_modules']) expect(cfg).toMatch(new RegExp(`^\\s*- ${x.replace('.', '\\.')}\\s*$`, 'm'));
 });
+
+// 9. Calls to action: a lime Subscribe closes the page, and
+//    "Latest build" lands on the newest episode card, not the section heading.
+test('cta: bottom Subscribe button and Latest build target', async ({ page }) => {
+  await open(page, '/');
+  const sub = page.locator('#follow a.btn[href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1"]');
+  await expect(sub).toHaveCount(1);
+  await expect(sub).toBeVisible();
+  const href = (await page.locator('.cta a', { hasText: 'Latest build' }).getAttribute('href')) || '';
+  expect(href).toMatch(/^#ep\d\d$/);
+  const target = page.locator(`[id="${href.slice(1)}"]`);
+  await expect(target).toHaveCount(1);
+  // The target is an episode card, and the first (newest) one on the page.
+  expect(await target.evaluate((e) => e.matches('.ep') && e === document.querySelector('#episodes .ep'))).toBe(true);
+});

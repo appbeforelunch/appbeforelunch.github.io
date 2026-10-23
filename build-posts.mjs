@@ -30,7 +30,7 @@ for (const ep of EPISODES) {
     .map((s) => {
       const h = s.type === 'demo' ? s.caption || '' : s.headline;
       const bullets = s.type === 'point' && s.bullets?.length ? `<ul class="bullets">${s.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : '';
-      return `<h2>${esc(h)}</h2>${bullets}<p>${esc(s.voice)}</p>`;
+      return `${h ? `<h2>${esc(h)}</h2>` : ''}${bullets}<p>${esc(s.voice)}</p>`;
     })
     .join('\n');
   const outro = d.scenes.find((s) => s.type === 'outro');
