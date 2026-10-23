@@ -87,7 +87,7 @@ main:focus{outline:none}
 /* Scorecard: one table; build time drawn against lunch (an hour of track). Numbers stay as text. */
 .ledger{padding:clamp(48px,7vw,96px) 0}
 .table-scroll{margin-top:28px}
-table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:17px;line-height:1.45}
 th,td{text-align:left;vertical-align:top;padding:14px 18px 14px 0;border-bottom:1px solid var(--line-term)}
 thead th{font-size:15px;font-weight:600;color:var(--on-term-2);vertical-align:bottom}
 tbody th{font-weight:700;white-space:nowrap}
