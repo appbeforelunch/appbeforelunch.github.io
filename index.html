@@ -26,7 +26,7 @@
   <section class="hero dark"><div class="wrap hero-grid">
     <h1>Can AI build an app before lunch?</h1>
     <p class="lede">Every week I give Claude Code one prompt and a timer, and I report what actually happens. The apps are free, the prompts are public, and the bugs stay in the video.</p>
-    <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#ep10">Latest build</a></p>
+    <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#ep11">Latest build</a></p>
     <figure class="hero-frame">
       <picture>
         <source media="(max-width: 600px)" srcset="img/hero-ep02-phone-640.webp 640w" sizes="calc(100vw - 32px)" width="640" height="448">
@@ -41,20 +41,32 @@
     <h2>Episodes</h2>
     <p class="sub">Newest first. Every build ships with its prompt and source on GitHub.</p>
 
-    <article id="ep10" class="ep feature">
-      <figure class="frame"><img src="img/ep10-thumb-560.webp" srcset="img/ep10-thumb-560.webp 560w, img/ep10-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
-          alt="The episode 10 thumbnail: the rewind menu row Restore code and conversation above two git lines, M src/app.js and M src/greet.js, ringed in red, next to the words STILL CHANGED and a Tested #1 tag."></figure>
+    <article id="ep11" class="ep feature">
+      <figure class="frame"><img src="img/ep11-thumb-560.webp" srcset="img/ep11-thumb-560.webp 560w, img/ep11-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The episode 11 thumbnail: a typed /compact command above the Claude Code answer 6. I don't know from memory, next to the words ROWS DROPPED and a Tested #2 tag."></figure>
       <div class="feature-text">
-        <h3>Claude Code /rewind not working? It skips Bash edits</h3>
-        <p class="tag">Ep 10 · /rewind, tested</p>
-        <p>Claude Code, tested #1: does /rewind undo everything? 27 sessions in a small demo project, with git checked after every rewind. Changes from Claude's Edit tool came back. Changes from a sed command or a subagent were not undone, and when one prompt used both, rewind restored 1 of 3 files and left 2 changed, 5 of 5 times. A snapshot hook that saves every prompt got the project back 3 of 3. The hook is in the video description.</p>
+        <h3>Does Claude Code forget your rules after /compact? Tested</h3>
+        <p class="tag">Ep 11 · /compact, tested</p>
+        <p>Claude Code, tested #2: we planted four rules and one next task in a demo project and ran the same test 18 times. After /compact, 9 of 9 runs kept all four rules and the task. What it lost was a row inside a big file it had read: who placed order 10006, 0 of 9, and all 9 said they didn't know. Asking it to read the file again fixed that, 3 of 3.</p>
         <p class="actions">
-          <a class="watch" href="https://www.youtube.com/watch?v=fDcg3OnO3r4">Watch</a>
+          <a class="watch" href="https://www.youtube.com/watch?v=W3Uke-Kb3BM">Watch</a>
         </p>
       </div>
     </article>
 
-    <ol class="list" reversed start="9">
+    <ol class="list" reversed start="10">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep10-thumb-560.webp" srcset="img/ep10-thumb-560.webp 560w, img/ep10-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+            alt="The episode 10 thumbnail: the rewind menu row Restore code and conversation above two git lines, M src/app.js and M src/greet.js, ringed in red, next to the words STILL CHANGED and a Tested #1 tag."></figure>
+        <div class="ep-text">
+          <h3>Claude Code /rewind not working? It skips Bash edits</h3>
+          <p class="tag">Ep 10 · /rewind, tested</p>
+          <p>Claude Code, tested #1: does /rewind undo everything? 27 sessions in a small demo project, with git checked after every rewind. Changes from Claude's Edit tool came back. Changes from a sed command or a subagent were not undone, and when one prompt used both, rewind restored 1 of 3 files and left 2 changed, 5 of 5 times. A snapshot hook that saves every prompt got the project back 3 of 3. The hook is in the video description.</p>
+          <p class="actions">
+            <a class="watch" href="https://www.youtube.com/watch?v=fDcg3OnO3r4">Watch</a>
+          </p>
+        </div>
+      </li>
       <li class="ep">
         <figure class="frame"><img src="img/ep09-thumb-560.webp" srcset="img/ep09-thumb-560.webp 560w, img/ep09-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
             alt="The episode 9 thumbnail: the Cancel button in the Tessera crop tool greyed out and ringed in lime, next to the words GREYED OUT."></figure>
@@ -194,6 +206,7 @@
     <table>
       <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">1 hr</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
       <tbody>
+        <tr><th scope="row">EP 11</th><td data-k="Build">sessions: 26<span class="also">a test, not a build</span></td><td data-k="Tests">18 counted runs<span class="also">rules kept: 9 of 9</span></td><td data-k="Bug" class="bug"><span class="k">dropped:</span> a row in a big file, 0 of 9<span class="also">fix: read the file again, 3 of 3</span></td><td data-k="Cost">$39.06 at API prices, ran on a Claude plan</td></tr>
         <tr><th scope="row">EP 10</th><td data-k="Build">sessions: 27<span class="also">a test, not a build</span></td><td data-k="Tests">git checked after every rewind</td><td data-k="Bug" class="bug"><span class="k">partial restore:</span> 2 of 3 files still changed<span class="also">fix: snapshot hook, 3 of 3</span></td><td data-k="Cost">$6.71 at API prices, ran on a Claude plan</td></tr>
         <tr><th scope="row">EP 09</th><td data-k="Build">about 13 min<span class="clock" style="--m:13" aria-hidden="true"></span></td><td data-k="Tests">51 / 51<span class="also">robot re-test: 26 of 234 do nothing, was 64 of 281</span></td><td data-k="Bug" class="bug"><span class="k">first run:</span> 4 of 12 new tests failed<span class="also">67 controls now greyed out</span></td><td data-k="Cost">$4.10 at API prices, ran on a Claude plan</td></tr>
         <tr><th scope="row">EP 08</th><td data-k="Build">about 8 min<span class="clock" style="--m:8" aria-hidden="true"></span></td><td data-k="Tests">33 / 33<span class="also">check: 11 of 11 jobs work</span></td><td data-k="Bug" class="bug">reading line struck through the words<span class="also">the tests missed it</span></td><td data-k="Cost">$1.97 at API prices, ran on a Claude plan</td></tr>

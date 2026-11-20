@@ -30,11 +30,12 @@ const GUARD_HREFS = ['privacy.html', 'https://www.tiktok.com/@appbeforelunch', '
   'https://www.instagram.com/appbeforelunch', 'https://www.facebook.com/appbeforelunch', 'https://github.com/appbeforelunch', 'mailto:contact@appbeforelunch.com'];
 // Ep7 card (branch ep7-live): only checked when the card is on the page.
 const GUARD_EP7 = ['281', '64', '$6.02 at API prices, covered by Claude + ElevenLabs plans', 'Not affiliated with Adobe.'];
-// Eps 8-10: checked when the card is on the page.
+// Eps 8-11: checked when the card is on the page.
 const GUARD_EPS: Record<string, { text: string[]; video: string }> = {
   'EP 08': { text: ['$9.99', '33 / 33', '11 of 11', '$1.97 at API prices, ran on a Claude plan', 'Not affiliated with any app named.'], video: 'rnQIz_G2DoI' },
   'EP 09': { text: ['51 / 51', '26 of 234', '64 of 281', '$4.10 at API prices, ran on a Claude plan'], video: '84tHLho3ZA8' },
   'EP 10': { text: ['27 sessions', '2 of 3 files still changed', '$6.71 at API prices, ran on a Claude plan'], video: 'fDcg3OnO3r4' },
+  'EP 11': { text: ['18 times', '10006', '$39.06 at API prices, ran on a Claude plan'], video: 'W3Uke-Kb3BM' },
 };
 
 async function open(page: Page, path: string) {
