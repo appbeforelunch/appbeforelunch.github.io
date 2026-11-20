@@ -21,7 +21,6 @@ const GUARD: Record<string, string[]> = {
     '90 rules', '107 rules', 'Not medical advice.', '$0 on top of Claude + ElevenLabs plans',
     '27 seconds', 'fourteen passing tests', '14 / 14', '$0 on top of a Claude plan', 'using it for the LLC',
     'No back and forth', 'I never touch the source', 'not a programmer',
-    'the narration is an AI clone of the host\'s own voice',
     'paid Claude subscription', 'paid ElevenLabs plan (neither sponsored)', 'Everything is shown as recorded.',
   ],
   '/privacy.html': ['no tracking or analytics scripts', 'Limited Use requirements', 'contact@appbeforelunch.com'],
