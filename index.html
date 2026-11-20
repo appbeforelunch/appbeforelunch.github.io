@@ -26,7 +26,7 @@
   <section class="hero dark"><div class="wrap hero-grid">
     <h1>Can AI build an app before lunch?</h1>
     <p class="lede">Every week I give Claude Code one prompt and a timer, and I report what actually happens. The apps are free, the prompts are public, and the bugs stay in the video.</p>
-    <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#ep07">Latest build</a></p>
+    <p class="cta"><a class="btn" href="https://www.youtube.com/@AppBeforeLunch?sub_confirmation=1">Subscribe on YouTube</a><a class="more" href="#ep10">Latest build</a></p>
     <figure class="hero-frame">
       <picture>
         <source media="(max-width: 600px)" srcset="img/hero-ep02-phone-640.webp 640w" sizes="calc(100vw - 32px)" width="640" height="448">
@@ -41,22 +41,62 @@
     <h2>Episodes</h2>
     <p class="sub">Newest first. Every build ships with its prompt and source on GitHub.</p>
 
-    <article id="ep07" class="ep feature">
-      <figure class="frame"><img src="img/ep07-bug-560.webp" srcset="img/ep07-bug-560.webp 560w, img/ep07-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
-          alt="Tessera, the photo editor Claude Code built in episode 7, in the crop tool: the test robot clicks Cancel with no crop box drawn, nothing changes, and it flags the button as doing nothing. Label: The robot's own recording."></figure>
+    <article id="ep10" class="ep feature">
+      <figure class="frame"><img src="img/ep10-thumb-560.webp" srcset="img/ep10-thumb-560.webp 560w, img/ep10-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+          alt="The episode 10 thumbnail: the rewind menu row Restore code and conversation above two git lines, M src/app.js and M src/greet.js, ringed in red, next to the words STILL CHANGED and a Tested #1 tag."></figure>
       <div class="feature-text">
-        <h3>I asked Claude Code for Photoshop. Then a robot clicked every button.</h3>
-        <p class="tag">Ep 07 · Photo editor</p>
-        <p>One prompt asked for a browser photo editor, and about 25 minutes later Claude Code had built Tessera, with layers, filters, text and undo. A test program clicked all 281 controls and flagged 64 as doing nothing. Tried again the way a person uses them, all 64 work: the mistakes were the checker's. Not affiliated with Adobe.</p>
+        <h3>Claude Code /rewind not working? It skips Bash edits</h3>
+        <p class="tag">Ep 10 · /rewind, tested</p>
+        <p>Claude Code, tested #1: does /rewind undo everything? 27 sessions in a small demo project, with git checked after every rewind. Changes from Claude's Edit tool came back. Changes from a sed command or a subagent were not undone, and when one prompt used both, rewind restored 1 of 3 files and left 2 changed, 5 of 5 times. A snapshot hook that saves every prompt got the project back 3 of 3. The hook is in the video description.</p>
         <p class="actions">
-          <a class="watch" href="https://www.youtube.com/watch?v=vHpiqrIhlwk">Watch</a>
-          <a href="https://github.com/appbeforelunch/lunch-pixels/blob/main/PROMPT.md">The prompt</a>
-          <a href="https://github.com/appbeforelunch/lunch-pixels">Source</a>
+          <a class="watch" href="https://www.youtube.com/watch?v=fDcg3OnO3r4">Watch</a>
         </p>
       </div>
     </article>
 
-    <ol class="list" reversed start="6">
+    <ol class="list" reversed start="9">
+      <li class="ep">
+        <figure class="frame"><img src="img/ep09-thumb-560.webp" srcset="img/ep09-thumb-560.webp 560w, img/ep09-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+            alt="The episode 9 thumbnail: the Cancel button in the Tessera crop tool greyed out and ringed in lime, next to the words GREYED OUT."></figure>
+        <div class="ep-text">
+          <h3>Updating an existing Claude Code app from viewer comments</h3>
+          <p class="tag">Ep 09 · Updating an app</p>
+          <p>Two viewers said the Cancel button in episode 7's photo editor was clickable with nothing to cancel. They were right, so the same project got one more Claude Code session: 13 minutes, controls greyed out when they have nothing to do, editable text, and project files. Its own new tests failed 4 of 12 at first and finished at 51 of 51. The same test robot as episode 7: 64 of 281 controls did nothing before, 26 of 234 after, and 67 are greyed out.</p>
+          <p class="actions">
+            <a class="watch" href="https://www.youtube.com/watch?v=84tHLho3ZA8">Watch</a>
+            <a href="https://github.com/appbeforelunch/lunch-pixels">Source</a>
+            <a href="https://github.com/appbeforelunch/lunch-pixels-audit">The test program</a>
+          </p>
+        </div>
+      </li>
+      <li class="ep">
+        <figure class="frame"><img src="img/ep08-thumb-560.webp" srcset="img/ep08-thumb-560.webp 560w, img/ep08-thumb-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+            alt="The episode 8 thumbnail: $1.97 TO BUILD in large type beside a phone running the teleprompter app, with a toast recipe script and a speed of 150 words per minute."></figure>
+        <div class="ep-text">
+          <h3>This app wants $9.99 a month. Claude Code made one before lunch.</h3>
+          <p class="tag">Ep 08 · Teleprompter</p>
+          <p>Teleprompter apps charge $9.99 a month (two US App Store listings, checked Nov 2, 2026). One Claude Code session built one in about 8 minutes: scripts saved in your browser, speed in words per minute, a countdown, mirror mode, and camera recording with no watermark. Its own tests passed while the reading line struck through the words; it caught that in its own screenshots. A check written before the build tried 11 jobs, and all 11 work. Paid apps still do more: voice-following scroll, a real phone app, and a developer who fixes them. Not affiliated with any app named.</p>
+          <p class="actions">
+            <a class="watch" href="https://www.youtube.com/watch?v=rnQIz_G2DoI">Watch</a>
+            <a href="https://github.com/appbeforelunch/lunch-prompter/blob/main/PROMPT.md">The prompt</a>
+            <a href="https://github.com/appbeforelunch/lunch-prompter">Source</a>
+          </p>
+        </div>
+      </li>
+      <li class="ep">
+        <figure class="frame"><img src="img/ep07-bug-560.webp" srcset="img/ep07-bug-560.webp 560w, img/ep07-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
+            alt="Tessera, the photo editor Claude Code built in episode 7, in the crop tool: the test robot clicks Cancel with no crop box drawn, nothing changes, and it flags the button as doing nothing. Label: The robot's own recording."></figure>
+        <div class="ep-text">
+          <h3>I asked Claude Code for Photoshop. Then a robot clicked every button.</h3>
+          <p class="tag">Ep 07 · Photo editor</p>
+          <p>One prompt asked for a browser photo editor, and about 25 minutes later Claude Code had built Tessera, with layers, filters, text and undo. A test program clicked all 281 controls and flagged 64 as doing nothing. Tried again the way a person uses them, all 64 work: the mistakes were the checker's. Not affiliated with Adobe.</p>
+          <p class="actions">
+            <a class="watch" href="https://www.youtube.com/watch?v=vHpiqrIhlwk">Watch</a>
+            <a href="https://github.com/appbeforelunch/lunch-pixels/blob/main/PROMPT.md">The prompt</a>
+            <a href="https://github.com/appbeforelunch/lunch-pixels">Source</a>
+          </p>
+        </div>
+      </li>
       <li class="ep">
         <figure class="frame"><img src="img/ep06-bug-560.webp" srcset="img/ep06-bug-560.webp 560w, img/ep06-bug-1120.webp 1120w" sizes="(min-width: 960px) 560px, calc(100vw - 32px)" width="1120" height="630" loading="lazy"
             alt="The status line from episode 6 in a terminal: 5h 13% resets 12:10am, week 47% resets Mon 3am. Label: Real reading, re-typeset from a live capture."></figure>
@@ -154,6 +194,9 @@
     <table>
       <thead><tr><th scope="col">Episode</th><th scope="col" class="build-h">Build <span class="scale" aria-hidden="true"><span>0</span><span class="lunch">1 hr</span></span></th><th scope="col">Tests</th><th scope="col">Bug</th><th scope="col">Cost</th></tr></thead>
       <tbody>
+        <tr><th scope="row">EP 10</th><td data-k="Build">sessions: 27<span class="also">a test, not a build</span></td><td data-k="Tests">git checked after every rewind</td><td data-k="Bug" class="bug"><span class="k">partial restore:</span> 2 of 3 files still changed<span class="also">fix: snapshot hook, 3 of 3</span></td><td data-k="Cost">$6.71 at API prices, ran on a Claude plan</td></tr>
+        <tr><th scope="row">EP 09</th><td data-k="Build">about 13 min<span class="clock" style="--m:13" aria-hidden="true"></span></td><td data-k="Tests">51 / 51<span class="also">robot re-test: 26 of 234 do nothing, was 64 of 281</span></td><td data-k="Bug" class="bug"><span class="k">first run:</span> 4 of 12 new tests failed<span class="also">67 controls now greyed out</span></td><td data-k="Cost">$4.10 at API prices, ran on a Claude plan</td></tr>
+        <tr><th scope="row">EP 08</th><td data-k="Build">about 8 min<span class="clock" style="--m:8" aria-hidden="true"></span></td><td data-k="Tests">33 / 33<span class="also">check: 11 of 11 jobs work</span></td><td data-k="Bug" class="bug">reading line struck through the words<span class="also">the tests missed it</span></td><td data-k="Cost">$1.97 at API prices, ran on a Claude plan</td></tr>
         <tr><th scope="row">EP 07</th><td data-k="Build">about 25 min<span class="clock" style="--m:25" aria-hidden="true"></span></td><td data-k="Tests">controls: 281 clicked by a robot<span class="also">re-test: 0 of 64 really dead</span></td><td data-k="Bug" class="bug"><span class="k">flagged:</span> 64 "do nothing"</td><td data-k="Cost">$6.02 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 06</th><td data-k="Build">about 4 min<span class="clock" style="--m:4" aria-hidden="true"></span></td><td data-k="Tests">41 checks, 17 payloads<span class="also">network: none, stdin only</span></td><td data-k="Bug" class="bug"><span class="k">blind spot:</span> model-specific limits</td><td data-k="Cost">$1.19 at API prices, covered by Claude + ElevenLabs plans</td></tr>
         <tr><th scope="row">EP 05</th><td data-k="Build">sessions: 4</td><td data-k="Tests">46 / 46</td><td data-k="Bug" class="bug">wrong reply on 39 of 231 banners<span class="also">habit: called a fix that made it worse</span></td><td data-k="Cost">$10.08 at API prices, covered by Claude + ElevenLabs plans</td></tr>

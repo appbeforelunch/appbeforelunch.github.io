@@ -30,6 +30,12 @@ const GUARD_HREFS = ['privacy.html', 'https://www.tiktok.com/@appbeforelunch', '
   'https://www.instagram.com/appbeforelunch', 'https://www.facebook.com/appbeforelunch', 'https://github.com/appbeforelunch', 'mailto:contact@appbeforelunch.com'];
 // Ep7 card (branch ep7-live): only checked when the card is on the page.
 const GUARD_EP7 = ['281', '64', '$6.02 at API prices, covered by Claude + ElevenLabs plans', 'Not affiliated with Adobe.'];
+// Eps 8-10: checked when the card is on the page.
+const GUARD_EPS: Record<string, { text: string[]; video: string }> = {
+  'EP 08': { text: ['$9.99', '33 / 33', '11 of 11', '$1.97 at API prices, ran on a Claude plan', 'Not affiliated with any app named.'], video: 'rnQIz_G2DoI' },
+  'EP 09': { text: ['51 / 51', '26 of 234', '64 of 281', '$4.10 at API prices, ran on a Claude plan'], video: '84tHLho3ZA8' },
+  'EP 10': { text: ['27 sessions', '2 of 3 files still changed', '$6.71 at API prices, ran on a Claude plan'], video: 'fDcg3OnO3r4' },
+};
 
 async function open(page: Page, path: string) {
   await page.goto(path, { waitUntil: 'load' });
@@ -209,6 +215,10 @@ test('content: authored numbers and lines survive', async ({ page }, info) => {
     const text = (await page.locator('body').innerText()).replace(/\s+/g, ' ');
     const missing = needles.filter((n) => !text.includes(n));
     if (path === '/' && text.includes('EP 07')) missing.push(...GUARD_EP7.filter((n) => !text.includes(n)));
+    if (path === '/') for (const [row, g] of Object.entries(GUARD_EPS)) if (text.includes(row)) {
+      missing.push(...g.text.filter((n) => !text.includes(n)));
+      if (!(await page.locator(`a[href*="${g.video}"]`).count())) missing.push(`watch link ${g.video}`);
+    }
     expect(missing, `missing on ${path}`).toEqual([]);
     expect(text.includes('—'), `em dash on ${path}`).toBe(false);
   }
