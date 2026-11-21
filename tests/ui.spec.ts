@@ -15,20 +15,20 @@ const GUARD: Record<string, string[]> = {
   '/': [
     'Can AI build', 'before lunch?',
     'the bugs stay in the video',
-    '41 checks', '$1.19 at API prices, covered by Claude + ElevenLabs plans',
-    '39 of 231', '46 / 46', '$10.08 at API prices, covered by Claude + ElevenLabs plans',
-    '1 lb 11.5 oz', '61 tests', '$3.87 at API prices, covered by Claude + ElevenLabs plans', 'Not affiliated with Amazon.',
-    '90 rules', '107 rules', 'Not medical advice.', '$0 on top of Claude + ElevenLabs plans',
-    '27 seconds', 'fourteen passing tests', '14 / 14', '$0 on top of a Claude plan', 'using it for the LLC',
+    '41 checks', '$1.19 at API prices, ran on a Claude plan',
+    '39 of 231', '46 / 46', '$10.08 at API prices, ran on a Claude plan',
+    '1 lb 11.5 oz', '61 tests', '$3.87 at API prices, ran on a Claude plan', 'Not affiliated with Amazon.',
+    '90 rules', '107 rules', 'Not medical advice.', 'ran on a Claude plan',
+    '27 seconds', 'fourteen passing tests', '14 / 14', 'ran on a Claude plan', 'using it for the LLC',
     'No back and forth', 'I never touch the source', 'not a programmer',
-    'paid Claude subscription', 'paid ElevenLabs plan (neither sponsored)', 'Everything is shown as recorded.',
+    'paid Claude subscription', 'Making and posting the videos uses other paid tools.', 'Everything is shown as recorded.',
   ],
   '/privacy.html': ['no tracking or analytics scripts', 'Limited Use requirements', 'contact@appbeforelunch.com'],
 };
 const GUARD_HREFS = ['privacy.html', 'https://www.tiktok.com/@appbeforelunch', 'https://www.youtube.com/@AppBeforeLunch',
   'https://www.instagram.com/appbeforelunch', 'https://www.facebook.com/appbeforelunch', 'https://github.com/appbeforelunch', 'mailto:contact@appbeforelunch.com'];
 // Ep7 card (branch ep7-live): only checked when the card is on the page.
-const GUARD_EP7 = ['281', '64', '$6.02 at API prices, covered by Claude + ElevenLabs plans', 'Not affiliated with Adobe.'];
+const GUARD_EP7 = ['281', '64', '$6.02 at API prices, ran on a Claude plan', 'Not affiliated with Adobe.'];
 // Eps 8-11: checked when the card is on the page.
 const GUARD_EPS: Record<string, { text: string[]; video: string }> = {
   'EP 08': { text: ['$9.99', '33 / 33', '11 of 11', '$1.97 at API prices, ran on a Claude plan', 'Not affiliated with any app named.'], video: 'rnQIz_G2DoI' },
